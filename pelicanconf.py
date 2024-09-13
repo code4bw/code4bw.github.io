@@ -46,4 +46,4 @@ STATIC_PATHS = [
 ]
 
 THEME = "themes/custom"
-THEME_STATIC_DIR = "theme"
+THEME_STATIC_DIR = "themes"
