@@ -44,3 +44,6 @@ STATIC_PATHS = [
     "images",
     "extra/robots.txt",
 ]
+
+THEME = "themes/custom"
+THEME_STATIC_DIR = "theme"
