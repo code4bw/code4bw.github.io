@@ -1,26 +1,14 @@
-name: Pelican CI/CD
-
+name: Deploy to Github Pages
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the master branch
   push:
-    branches:
-      - master
+    branches: ["main"]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - uses: nelsonjchen/gh-pages-pelican-action@0.2.0
-      env:
-        # GH_PAGES_BRANCH: gh-pages
-        # GH_PAGES_CNAME: custom domain
-        # PELICAN_CONFIG_FILE: pelicanconf.py
-        PELICAN_CONFIG_FILE: publishconf.py
-        # PELICAN_CONTENT_FOLDER: content
-        # PELICAN_THEME_FOLDER: package.json
-        # GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        GITHUB_TOKEN: ${{ secrets.GH_ACTIONS_TOKEN }}
+  deploy:
+    uses: "getpelican/pelican/.github/workflows/github_pages.yml@main"
+    permissions:
+      contents: "read"
+      pages: "write"
+      id-token: "write"
+    with:
+      settings: "publishconf.py"
