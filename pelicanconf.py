@@ -6,7 +6,7 @@ PATH = "content"
 
 TIMEZONE = 'Asia/Seoul'
 
-DEFAULT_LANG = 'Korean'
+DEFAULT_LANG = 'ko'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
