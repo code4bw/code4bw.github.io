@@ -25,8 +25,8 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("You can add links in your config file", "#"),
-    ("Another social link", "#"),
+    ("Github", "https://github.com/code4bw"),
+    ("Google DEV", "https://g.dev/code4bw_dev"),
 )
 
 DEFAULT_PAGINATION = 10
