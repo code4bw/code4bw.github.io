@@ -27,5 +27,36 @@ pelican contents
 pelican -l [-r]
 ```
 * `-r` 옵션을 사용할 경우 소스 변경사항을 감지해서 자동으로 업데이트함
+
+블로그 글 탬플릿
+```
+---
+Status: draft
+Title: 
+Date:
+Modified: 
+Category:
+Tags: 
+Slug:
+Authors:
+Summary:
+---
+
+# What
+* 이 개념이 정확히 무엇인가
+* 정확한 정의는 무엇인가
+* 적용되는 범위는?
+
+# Why
+* 이 개념은 왜 필요한가
+* 개념이 등장하게 된 배경이 무엇인가
+* 어떠한 문제를 개선하기 위해 등장했는가
+
+# How
+* 어떻게 문제를 개선하는가
+* 동작 원리가 무엇인가
+```
+
+
 # Thanks to (References)
 https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
