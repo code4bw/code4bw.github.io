@@ -2,10 +2,10 @@ name: Deploy to Github Pages
 on:
   push:
     branches: ["main"]
-
+  workflow_dispatch:
 jobs:
   deploy:
-    uses: "./.github/workflows/github_pages.yml"
+    uses: "getpelican/pelican/.github/workflows/github_pages.yml@main"
     permissions:
       contents: "read"
       pages: "write"
