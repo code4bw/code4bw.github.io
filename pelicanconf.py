@@ -26,7 +26,7 @@ LINKS = (
 # Social widget
 SOCIAL = (
     ("github-alt", "https://github.com/code4bw"),
-    ("google", "https://g.dev/code4bw_dev"),
+    ("google", "https://github.com/code4bw"),
     ("x-twitter", "#"),
 )
 
@@ -37,13 +37,13 @@ PAGINATED_TEMPLATES = {'index': False, 'tag': 7, 'category': 7, 'author': 7}
 
 # path-specific metadata
 EXTRA_PATH_METADATA = {
-    "extra/robots.txt": {"path": "robots.txt"},
+    "assets/extra/robots.txt": {"path": "robots.txt"},
 }
 
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [
-    "images",
-    "extra/robots.txt",
+    "assets/images",
+    "assets/extra/robots.txt",
 ]
 
 THEME = "themes/custom"
