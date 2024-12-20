@@ -1,3 +1,4 @@
+#project/ongoing 
 # Goal
 포트폴리오와 개인 공부 내용들을 정리하는 블로그를 운영한다
 - 단순한 사실의 나열보다는  경험을 위주로 작성한다
@@ -11,11 +12,17 @@
 - 기본적으로 draft에서 글을 작성하고 완성되면 publish를 한다
 - 썸네일은 글의 slug와 동일한 이름의 `png` 파일로 content 폴더의 `images/thumbs` 폴더에 넣으면 자동으로 적용된다
 
-# Architecture
+# Tasks
 
 
 # Setting up a Environment
 파이썬 기반 SSG인 Pelican을 이용한다
+
+설치 방법
+```
+pip install -r requirements.txt
+```
+
 
 콘텐츠 빌드
 ```bash
@@ -23,7 +30,7 @@ pelican contents
 ```
 
 로컬에서 확인
-```
+```bash
 pelican -l [-r]
 ```
 * `-r` 옵션을 사용할 경우 소스 변경사항을 감지해서 자동으로 업데이트함
@@ -59,4 +66,11 @@ Summary:
 
 
 # Thanks to (References)
-https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
+* SSG
+    * https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
+* book
+    * 
+* article
+    * 
+* paper
+    * 

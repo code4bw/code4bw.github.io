@@ -1,0 +1,1 @@
+[사전 학습(pre-training)](사전%20학습(pre-training).md) 과 [[미세 조정 (fine-tuning)]] 두 단계로 나눠 학습함
