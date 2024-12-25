@@ -66,11 +66,4 @@ Summary:
 
 
 # Thanks to (References)
-* SSG
-    * https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
-* book
-    * 
-* article
-    * 
-* paper
-    * 
+* https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
