@@ -53,8 +53,8 @@ Summary: 음성 생성 모델을 외부에서 사용할 수 있도록 API를 개
 - 사용자 정보 (사용량 추적, 로그인 정보) 관리를 위한 DB는 SQLite를 사용
     - DB에서 읽어야 할 정보가 많지 않다고 판단하여 SQLite를 선택
 - 관리 페이지 UI
-    - ![](../assets/imgs/pr02_vvapi_login.png) ![](../assets/imgs/pr02_vvapi_vvlist.png)
-    - ![](../assets/imgs/pr02_vvapi_synthpage.png) ![](../assets/imgs/pr02_vv_api_documentation.png)
+    - ![](../assets/imgs/pr02_ui_sample.png)
+
 ## 정리
 - 모델을 torchscript로 만드는 과정에서 지원하지 않는 함수로 인해 script로 변환이 되지 않는 문제가 있었음
     - torchscript에서 지원하는 함수로 모델 일부를 다시 작성한 다음 모델을 훈련해서 해결함
