@@ -1,0 +1,2 @@
+pelican content
+pelican -l
