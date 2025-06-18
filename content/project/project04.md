@@ -1,6 +1,6 @@
 ---
 Status: published
-Title: Vibe Coding으로 PDF 하이라이트 추출기 구현해보기
+Title: Vibe Coding으로 PDF 하이라이트 추출기 구현
 Date: 2025-04-28
 Modified: 2025-06-16
 Category: project
