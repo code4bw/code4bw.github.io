@@ -35,7 +35,3 @@ pelican -l [-r]
 * https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
 
 # ✅Write List
-- [ ] [project01](content/project/project01.md)
-- [ ] [project03](content/project/project03.md)
-- [ ] 글끼리 link가 동작하는지 확인 필요
-
