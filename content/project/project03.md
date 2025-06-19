@@ -4,11 +4,14 @@ Title: 단일 카메라 기반 모션 캡처 구현
 Date: 2024-10-21 10:00
 Modified: 2024-10-21 22:00
 Category: project
-tags: Mediapipe, Unity, MotionCapture
-tag_save: Mediapipe, Unity, MotionCapture
+tags:
+  - Mediapipe
+  - Unity
+  - MotionCapture
 Slug: project03
 Authors: CODE4BW
 Summary: 캐릭터 기반 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트에서 캐릭터의 동작 구현을 위한 단일 카메라 기반 모션 캡처기능 구현 및 유니티와 연동
+Image: /assets/imgs/pr03_mediapipe_functions.png
 ---
 ### 기간
 - 회사 프로젝트

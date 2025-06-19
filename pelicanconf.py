@@ -75,4 +75,5 @@ PLUGINS = [
     'sitemap',
     'featured_image',
     'render_math',
+    'custom_tags',
 ]

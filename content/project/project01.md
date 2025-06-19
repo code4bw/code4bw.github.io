@@ -4,11 +4,13 @@ Title: 다국어, 다화자 음성 생성 모델 개발
 Date: 2024-10-21 22:00
 Modified: 2025-06-16
 Category: project
-tags: AI모델제작, MLOps
-tag_save: AI모델제작, MLOps
+tags:
+  - AI모델제작
+  - MLOps
 Slug: project01
 Authors: CODE4BW
 Summary: Virtual Human에 사용되는 가상음성을 제작하는 프로젝트로 다화자, 다국어 지원을 목표로 합니다. 특히 한가지 언어로만 녹음된 목소리도 녹음되지 않은 언어로 목소리를 유지하면서 발화를 하는 것을 목표로 합니다
+Image: /assets/imgs/pr01_voice_model_train_image.png
 ---
 ### 기간
 - 회사 프로젝트

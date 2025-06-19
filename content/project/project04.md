@@ -4,11 +4,13 @@ Title: Vibe Coding으로 PDF 하이라이트 추출기 구현
 Date: 2025-04-28
 Modified: 2025-06-16
 Category: project
-tags: VibeCoding, Prompting
-tag_save: VibeCoding, Prompting
+tags:
+  - VibeCoding
+  - Prompting
 Slug: project04
 Authors: CODE4BW
 Summary: 읽은 책, 글에서 하이라이트 한 내용을 자동으로 추출하는 프로그램을 제작하는 프로젝트로 Vibe Coding을 활용하여 제작함
+Image: /assets/imgs/pr04_final.png
 ---
 ### 기간
 - 개인 프로젝트

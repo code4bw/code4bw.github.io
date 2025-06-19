@@ -4,11 +4,14 @@ Title: 음성 생성모델 API 구현
 Date: 2024-10-22
 Modified: 2025-06-16
 Category: project
-tags: 모델API, FastAPI, MLOps
-tag_save: 모델API, FastAPI, MLOps
+tags:
+  - 모델API
+  - FastAPI
+  - MLOps
 Slug: project02
 Authors: CODE4BW
 Summary: 음성 생성 모델을 외부에서 사용할 수 있도록 API를 개발 및 관리 할 수 있도록 관리 페이지를 구현하는 작업
+Image: /assets/imgs/pr02_ui_sample.png
 ---
 ### 기간
 - 회사 프로젝트
