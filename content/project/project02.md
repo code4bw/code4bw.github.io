@@ -3,7 +3,7 @@ Status: published
 Title: 음성 생성모델 API 구현
 Date: 2024-10-22
 Modified: 2025-06-16
-Category: project
+Category: PROJECT
 tags:
   - 모델API
   - FastAPI

@@ -3,7 +3,7 @@ Status: published
 Title: 단일 카메라 기반 모션 캡처 구현
 Date: 2024-10-21 10:00
 Modified: 2024-10-21 22:00
-Category: project
+Category: PROJECT
 tags:
   - Mediapipe
   - Unity

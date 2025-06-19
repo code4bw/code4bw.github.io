@@ -3,7 +3,7 @@ Status: published
 Title: CPU 구조 및 동작
 Date: 2025-06-16
 Modified: 2025-06-16
-Category: blogpost
+Category: BLOGPOST
 tags: cpu
 Slug: cpu
 Authors: CODE4BW

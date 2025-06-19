@@ -18,8 +18,6 @@ Title: Topics
 Date: 2025-06-19
 Modified: {date}
 Category: INDEX
-tags: INDEX
-tag_save: INDEX
 Slug: topics
 Authors: CODE4BW
 Summary: 블로그 글을 주제별로 분류한 페이지 

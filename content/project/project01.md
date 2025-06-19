@@ -3,7 +3,7 @@ Status: published
 Title: 다국어, 다화자 음성 생성 모델 개발
 Date: 2024-10-21 22:00
 Modified: 2025-06-16
-Category: project
+Category: PROJECT
 tags:
   - AI모델제작
   - MLOps
