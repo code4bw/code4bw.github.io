@@ -3,6 +3,7 @@ SITENAME = "CODE4BW's Logs"
 REAL_NAME = "CODE4BW"
 SITEURL = ""
 
+
 PATH = "content"
 
 TIMEZONE = 'Asia/Seoul'
@@ -68,3 +69,10 @@ DEV_SKILLS = {
     (9, "fa-brands fa-linux", "Linux", "리눅스 환경에서 익숙하게 작업이 가능합니다. bash 쉘 스크립트를 작성할 수 있습니다"),
     (10, "fa-solid fa-terminal", "Prompt Engineering", "LLM 및 생성 모델을 위한 프롬프트를 작성 할 수 있습니다")
 }
+
+PLUGIN_PATHS = [THEME + "/plugins"]
+PLUGINS = [
+    'sitemap',
+    'featured_image',
+    'render_math',
+]

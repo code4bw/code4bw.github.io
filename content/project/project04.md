@@ -26,7 +26,7 @@ Summary: 읽은 책, 글에서 하이라이트 한 내용을 자동으로 추출
 - PDF에서 하이라이트를 추출해서 `.md`로 저장하는 프로그램 구현
 - Vibe Coding을 이용해서 제작함
     - Vibe Coding으로 개발하는 방법을 습득
-- 프로젝트 소스 : https://github.com/code4bw/highlight2note
+- 프로젝트 소스 : [GITHUB](https://github.com/code4bw/highlight2note)
 
 ### 과정
 
