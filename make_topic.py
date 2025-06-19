@@ -1,3 +1,4 @@
+import os
 import datetime
 
 date = datetime.date.today()
@@ -27,5 +28,19 @@ Summary: 블로그 글을 주제별로 분류한 페이지
 with open(output_file, 'w', encoding='utf-8') as f:
     f.write(header)
     for line in new_lines:
-        nl = line.replace("my.blog/content/", "{filename}")
-        f.write(f"{nl}\n") 
+        skip_line = False
+        path = line.split("](")[-1]
+        path = path.replace(')', '').replace('%20', ' ').replace("my.blog/", "")
+        print(path)
+        if os.path.exists(path):
+            with open(path, 'r', encoding='utf-8') as f2:
+                lines = f2.readlines()
+                for x in lines:
+                    x = x.strip()
+                    if x.startswith("Status"):
+                        if ("skip" in x) or ("draft" in x):
+                            skip_line = True
+                            break
+        if not skip_line:
+            nl = line.replace("my.blog/content/", "{filename}")
+            f.write(f"{nl}\n") 
