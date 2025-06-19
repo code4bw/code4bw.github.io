@@ -31,7 +31,27 @@ pelican -l [-r]
 ```
 * `-r` 옵션을 사용할 경우 소스 변경사항을 감지해서 자동으로 업데이트함
 
+# 📑Table of Contents
+- Projects
+    - [project01](content/project/project01.md) : 음성 생성 모델 개발 프로젝트
+    - [project02](content/project/project02.md) : 음성 생성 API 개발 프로젝트
+    - [project03](content/project/project03.md) : Mocap + Unity 프로젝트
+    - [project04](content/project/project04.md) : Vibe Coding 프로젝트
+- Blog Posts
+    - 컴퓨터 과학
+    - 게임 개발
+    - 인공지능
+    - 수학
+    - 과학
+    - 경영
 # 🤗Thanks to (References)
+* https://getpelican.com/
 * https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
+- https://themes.3rdwavemedia.com/
 
-# ✅Write List
+# ✅Draft List
+```dataview
+TABLE
+WHERE contains(file.folder, this.file.folder) and Status = "draft"
+SORT file.name ASC
+```
