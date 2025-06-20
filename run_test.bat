@@ -1,4 +1,4 @@
-python make_topic.py
+@REM python make_topic.py
 pelican content
 pelican -l
 pause

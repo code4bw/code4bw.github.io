@@ -38,12 +38,7 @@ pelican -l [-r]
     - [project03](content/project/project03.md) : Mocap + Unity 프로젝트
     - [project04](content/project/project04.md) : Vibe Coding 프로젝트
 - Blog Posts
-    - 컴퓨터 과학
-    - 게임 개발
-    - 인공지능
-    - 수학
-    - 과학
-    - 경영
+    - [Topics](content/Topics.md)
 # 🤗Thanks to (References)
 * https://getpelican.com/
 * https://github.com/getpelican/pelican/tree/main/pelican/themes/simple/templates
@@ -55,3 +50,5 @@ TABLE
 WHERE contains(file.folder, this.file.folder) and Status = "draft"
 SORT file.name ASC
 ```
+
+- [ ] topic의 링크들을 내부 링크로 파싱하도록 plugin 구현하기 
