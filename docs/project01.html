@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>다국어, 다화자 음성 생성 모델 개발 · CODE4BW</title>
+  <meta name="description" content="Virtual Human에 사용되는 가상음성을 제작하는 프로젝트로 다화자, 다국어 지원을 목표로 합니다. 특히 한가지 언어로만 녹음된 목소리도 녹음되지 않은 언어로 목소리를 유지하면서 발화를 하는 것을 목표로 합니다">
+  <meta name="author" content="CODE4BW / CODE4BW">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CODE4BW · Engineering Logs">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="다국어, 다화자 음성 생성 모델 개발">
+  <meta property="og:description" content="Virtual Human에 사용되는 가상음성을 제작하는 프로젝트로 다화자, 다국어 지원을 목표로 합니다. 특히 한가지 언어로만 녹음된 목소리도 녹음되지 않은 언어로 목소리를 유지하면서 발화를 하는 것을 목표로 합니다">
+  <meta property="og:url" content="https://code4bw.github.io/project01.html">
+  <meta property="og:image" content="https://code4bw.github.io/assets/imgs/pr01_voice_model_train_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="article:published_time" content="2024-10-21">
+  <meta property="article:modified_time" content="2025-06-16">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "다국어, 다화자 음성 생성 모델 개발", "description": "Virtual Human에 사용되는 가상음성을 제작하는 프로젝트로 다화자, 다국어 지원을 목표로 합니다. 특히 한가지 언어로만 녹음된 목소리도 녹음되지 않은 언어로 목소리를 유지하면서 발화를 하는 것을 목표로 합니다", "datePublished": "2024-10-21", "dateModified": "2025-06-16", "inLanguage": "ko", "author": {"@type": "Person", "name": "CODE4BW", "url": "https://code4bw.github.io/about.html"}, "mainEntityOfPage": "https://code4bw.github.io/project01.html", "image": "https://code4bw.github.io/assets/imgs/pr01_voice_model_train_image.png"}</script>
+  <link rel="canonical" href="https://code4bw.github.io/project01.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="CODE4BW의 기록" href="feeds/all.atom.xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="CODE4BW 홈"><span class="brand-mark" aria-hidden="true">/</span>code4bw<small>ENGINEERING LOGS</small></a>
+    <nav class="site-nav" aria-label="주 메뉴"><a href="index.html">기록</a><a href="portfolio.html" aria-current="page">프로젝트</a><a href="topics.html">주제</a><a href="about.html">소개</a></nav>
+    <div class="header-actions">
+      <a class="github-link" href="https://github.com/code4bw">GitHub ↗</a>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="어두운 화면으로 전환" aria-pressed="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main" class="wrap article-layout">
+  <article>
+    <nav class="breadcrumbs" aria-label="현재 위치"><a href="index.html">홈</a><span aria-hidden="true">/</span><a href="portfolio.html">프로젝트</a></nav>
+    <header class="article-header">
+      <div class="eyebrow">PROJECT NOTES</div>
+      <h1>다국어, 다화자 음성 생성 모델 개발</h1>
+      <p class="article-summary">Virtual Human에 사용되는 가상음성을 제작하는 프로젝트로 다화자, 다국어 지원을 목표로 합니다. 특히 한가지 언어로만 녹음된 목소리도 녹음되지 않은 언어로 목소리를 유지하면서 발화를 하는 것을 목표로 합니다</p>
+      <div class="entry-meta"><span>CODE4BW · CODE4BW</span><time datetime="2024-10-21">2024.10.21</time><span>4분 읽기</span><span>수정 2025.06.16</span></div>
+      <div class="tag-list"><a href="topics.html#ai">#AI모델제작</a><a href="topics.html#mlops">#MLOps</a></div>
+    </header>
+    <div class="article-body">
+<h2 id="section-1">기간</h2>
+<ul>
+<li>회사 프로젝트</li>
+<li>2021.01 ~ 2021.10 (10 개월)</li>
+</ul>
+<h2 id="section-2">목표</h2>
+<ul>
+<li>Virtual Human 서비스에 적용 할 다국어, 다화자 음성 생성 모델 개발 <ul>
+<li>다양한 Virtual Human 캐릭터에 대응도록 다양한 목소리 생성 지원 </li>
+<li>다국어 콘텐츠를 위한 하나의 목소리로 여러 언어 발화 지원 </li>
+<li>빠른 생성 속도 (RTF &lt; 0.5)</li>
+</ul>
+</li>
+</ul>
+<h2 id="section-3">성과</h2>
+<ul>
+<li>기존 대비 추론 자원 소모 1/8로 감소</li>
+<li>200개의 목소리로 4개 언어 발화가 가능해짐</li>
+<li>발음 정확도가 95% =&gt; 98%로 향상됨</li>
+<li>서비스 및 바우처 사업에 적용되어 회사 매출에 기여</li>
+</ul>
+<h2 id="section-4">과정</h2>
+<h3 id="section-5">데이터 수집 및 가공</h3>
+<ul>
+<li>좋은 품질의 데이터를 수집하기 위해 여러 단계의 검수 과정을 진행 <ul>
+<li>직접 녹음 및 공개된 데이터 등을 수집하는 작업을 진행함 </li>
+<li>STT를 이용해 음성과 대본이 잘 align되어있는지 확인 <ul>
+<li>whisper, Google Cloud STT API 활용함</li>
+<li>인식된 텍스트와 대본간의 편집거리를 계산함</li>
+</ul>
+</li>
+<li>일정 점수 이하의 음성은 사람이 직접 다시 확인함</li>
+<li><img alt="음성 수집 프로세스" decoding="async" loading="lazy" src="assets/imgs/pr01_voice_col_proc.png"/></li>
+</ul>
+</li>
+</ul>
+<h3 id="section-6">Embedding 모델 훈련</h3>
+<ul>
+<li>목소리와 언어 특성 정보를 담은 embedding을 생성하는 모델을 따로 제작함</li>
+<li>End-to-End 학습 VS embedding을 따로 훈련 비교<ul>
+<li>embedding 모델을 따로 훈련하고 활용하는 쪽이 언어에 따른 목소리 일관성을 조금 더 잘 유지했음</li>
+<li>목소리의 일관성이 중요했기 때문에 embedding모델을 따로 훈련하는 방식을 채택함</li>
+<li>음성 모델이 학습해야하는 정보가 줄어서 조금 더 정확도가 높아진 것으로 추측</li>
+<li><img alt="음성 임베딩 훈련" decoding="async" loading="lazy" src="assets/imgs/pr01_train_voice_embedding.png"/></li>
+</ul>
+</li>
+</ul>
+<h3 id="section-7">텍스트 입력 처리 방식 구현</h3>
+<ul>
+<li>입력된 텍스트를 phoneme로 변환하는 기능을 구현<ul>
+<li>연구에 따르면 phoneme을 사용하는 것이 음성 품질이 가장 좋음<ul>
+<li><a href="https://arxiv.org/pdf/1907.04448v2">https://arxiv.org/pdf/1907.04448v2</a></li>
+</ul>
+</li>
+<li>TTS 음성 생성을 위해서는 텍스트 → phoneme → Embedding 의 과정으로 입력에 필요한 embedding을 생성함</li>
+<li>각 언어별로 다른 phoneme를 사용하면 언어-목소리 간의 disentangle이 어려워짐 <ul>
+<li>목소리의 종류가 부족한 언어에서는 다른 언어의 억양이 나타나거나 목소리의 특징이 유지가 안되는 현상이 나타남 </li>
+<li>IPA라는 표준화된 발음 표기 방식을 적용하여 사용되는 phoneme를 통일함</li>
+<li><img alt="텍스트 to IPA 동작" decoding="async" loading="lazy" src="assets/imgs/pr01_voice_phonemes.png"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-8">모델 변경 작업</h3>
+<ul>
+<li>기존<ul>
+<li>GAN 기반 Mel-spectrogram 생성 모델 + mel-spec을 음성으로 변환하는 vocoder모델</li>
+<li>모델이 2개로 이루어져 있어 학습 절차도 복잡하고  추론시에도 복잡함</li>
+<li>다국어, 다화자 합성시 충분한 성능이 나오지 않음</li>
+</ul>
+</li>
+<li>신규<ul>
+<li>End-to-End 방식의 VITS 모델을 기반으로 작업</li>
+<li>다국어 음성 생성 관련 연구들의 내용을 적용하여 모델 구조를 변경함<ul>
+<li>훈련 프로세스가 기존보다 단순해짐</li>
+<li>기존 모델 대비 음성 생성 품질이 향상됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="section-9">모델 학습</h3>
+<ul>
+<li>RTX 3090를 4개를 활용하여 학습함<ul>
+<li>Data parallel을 사용하여 분산 학습 수행</li>
+</ul>
+</li>
+<li>약 2M step 정도 학습을 진행<ul>
+<li>음성 생성 모델은 loss가 감소하지 않더라도 훈련을 지속하면 품질이 향상되는 현상을 보임</li>
+<li><img alt="음성모델 훈련 이미지" decoding="async" loading="lazy" src="assets/imgs/pr01_voice_model_train_image.png"/></li>
+</ul>
+</li>
+</ul>
+<h3 id="section-10">모델 평가</h3>
+<ul>
+<li>랜덤하게 샘플을 생성하여 평가 진행<ul>
+<li>사람이 직접 들어보고 평가</li>
+<li>STT로 transcript후 입력 문장과 비교</li>
+</ul>
+</li>
+</ul>
+<h2 id="section-11">정리</h2>
+<ul>
+<li>데이터를 잘 정제하는 것이 매우 중요했음<ul>
+<li>일부 음성에서 발음이 부정확한 문제가 있었는데 해당 음성의 일부 데이터가 잘못되어있었고 수정후 현상이 개선됨</li>
+</ul>
+</li>
+<li>Input이 원하는 형태로 들어가는지 지속적인 확인은 필수적임<ul>
+<li>테스트에서는 잘 동작했지만 배포 버전에서 동작이 이상했음<ul>
+<li>IPA 변환에 오픈소스를 이용했는데 운영체제 버전에 따라 사용 가능한 지원되는 버전이 달라서 변환결과가 다른 문제가 있었음</li>
+<li>배포 환경이 오래되었기 때문에 업그레이드 하는 방법으로 해결함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>음성은 길이가 다양하기 때문에 몇가지 문제가 발생했음<ul>
+<li>학습시 메모리 사용량이 계속 변함<ul>
+<li>최대 길이의 음성에 맞춰 배치 크기를 결정</li>
+<li>지나치게 긴 음성은 자르거나 제외함</li>
+</ul>
+</li>
+<li>짧은 데이터와 긴 데이터가 같은 배치에 들어가면 학습 효율이 떨어짐<ul>
+<li>비슷한 길이의 음성끼리 묶어서 학습</li>
+</ul>
+</li>
+<li>훈련 상황에 따라 다양한 기법을 유연하게 적용할 필요가 있음</li>
+</ul>
+</li>
+</ul>
+    </div>
+    <footer class="article-end"><a href="portfolio.html">← 프로젝트 목록으로</a><a href="mailto:45429930+code4bw@users.noreply.github.com">이야기 나누기 ↗</a></footer>
+  </article>
+  <aside class="article-aside" aria-label="글 목차"><div class="toc"><p>이 글의 순서</p><nav aria-label="목차"><a href="#section-1">기간</a><a href="#section-2">목표</a><a href="#section-3">성과</a><a href="#section-4">과정</a><a href="#section-11">정리</a></nav></div></aside>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© CODE4BW · CODE4BW <span aria-hidden="true">/</span> 배운 것을 연결하고, 경험을 기록합니다.</span>
+    <nav class="footer-links" aria-label="하단 메뉴"><a href="https://github.com/code4bw">GitHub ↗</a><a href="mailto:45429930+code4bw@users.noreply.github.com">Email ↗</a><a href="feeds/all.atom.xml">RSS ↗</a><a href="tags.html">태그</a></nav>
+  </div>
+</footer>
+</body>
+</html>

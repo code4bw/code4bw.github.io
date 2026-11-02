@@ -1,15 +1,43 @@
-name: Deploy to Github Pages
+name: Deploy static HTML to GitHub Pages
+
 on:
   push:
-    branches: ["main"]
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'scripts/check-site.mjs'
+      - '.github/workflows/main.yml'
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
-    uses: "getpelican/pelican/.github/workflows/github_pages.yml@main"
-    permissions:
-      contents: "read"
-      pages: "write"
-      id-token: "write"
-    with:
-      settings: "publishconf.py"
-      requirements: '-r requirements.txt'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      TEMP: ${{ github.workspace }}/Temp
+      TMP: ${{ github.workspace }}/Temp
+      TMPDIR: ${{ github.workspace }}/Temp
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare temporary directory
+        run: mkdir -p "$TEMP"
+      - name: Check HTML and local links
+        run: node scripts/check-site.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5

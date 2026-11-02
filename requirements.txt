@@ -1,5 +1,0 @@
-pelican
-Markdown
-typogrify
-PyYAML
-beautifulsoup4

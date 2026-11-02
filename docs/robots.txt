@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://code4bw.github.io/sitemap.xml
