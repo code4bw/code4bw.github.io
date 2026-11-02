@@ -61,6 +61,8 @@ for (const [file, page] of pages) {
   if (!open.some(t => t.name === 'html' && t.attributes.lang === 'ko')) fail(file, 'Missing Korean document language');
   if (!/<title>[^<]+<\/title>/.test(source)) fail(file, 'Missing title');
   if (!meta('description')) fail(file, 'Missing description');
+  if (meta('author') !== 'CODE4BW') fail(file, 'Use the public nickname as author');
+  if (/[\w.+-]+@[\w.-]+\.[a-z]{2,}/i.test(clean)) fail(file, 'Personal email addresses must not be published');
   if (!meta('viewport')) fail(file, 'Missing viewport');
   if (open.filter(t => t.name === 'h1').length !== 1) fail(file, 'Expected one h1');
   if (!open.some(t => t.name === 'main' && t.attributes.id === 'main')) fail(file, 'Missing main landmark');
@@ -81,6 +83,7 @@ for (const [file, page] of pages) {
       const value = tag.attributes[attr];
       if (!value) continue;
       checkLink(file, value);
+      if (/^(mailto:|tel:)/i.test(value)) fail(file, 'Personal contact links must not be published');
       if (/themes\/custom|3rdwavemedia|\.md(?:$|[#?])/i.test(value)) fail(file, `Legacy theme or Markdown link: ${value}`);
     }
     if (tag.name === 'img' && !tag.attributes.alt?.trim()) fail(file, 'Image needs alt text');
@@ -93,6 +96,7 @@ for (const [file, page] of pages) {
     try {
       const data = JSON.parse(structured?.[1] || '');
       if (data['@type'] !== 'BlogPosting' || !data.headline || !data.datePublished || !data.dateModified) fail(file, 'Incomplete article structured data');
+      if (data.author?.name !== 'CODE4BW') fail(file, 'Use the public nickname in article structured data');
     } catch { fail(file, 'Invalid article structured data'); }
   }
 }
@@ -106,6 +110,7 @@ for (const asset of assets) {
 if (!assets.has('.nojekyll')) fail('docs', 'Missing .nojekyll');
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const feed = await readFile(path.join(root, 'feeds/all.atom.xml'), 'utf8');
+if (!/<author>\s*<name>CODE4BW<\/name>\s*<\/author>/.test(feed)) fail('feeds/all.atom.xml', 'Use the public nickname as feed author');
 const home = pages.get('index.html').clean;
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => decode(m[1]));
 for (const url of sitemapUrls) checkLink('sitemap.xml', url);
