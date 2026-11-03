@@ -7,7 +7,7 @@ const temp = path.join(project, 'Temp');
 await mkdir(temp, { recursive: true });
 for (const key of ['TEMP', 'TMP', 'TMPDIR']) process.env[key] = temp;
 const origin = 'https://code4bw.github.io/';
-export async function checkSite(root = path.join(project, 'docs')) {
+export async function checkSite(root = path.join(project, 'public')) {
   const failures = [];
   const pages = new Map();
   const assets = new Set();
@@ -102,13 +102,13 @@ export async function checkSite(root = path.join(project, 'docs')) {
     }
   }
   for (const asset of assets) {
-    if (/\.(md|py|zip|map)$/.test(asset) || /(^|\/)(content|themes|Temp|drafts)(\/|$)/i.test(asset)) fail(asset, 'Non-public source in docs');
+    if (/\.(md|py|zip|map)$/.test(asset) || /(^|\/)(content|themes|Temp|drafts)(\/|$)/i.test(asset)) fail(asset, 'Non-public source in public');
     if (asset.endsWith('.css')) {
       const css = await readFile(path.join(root, asset), 'utf8');
       for (const match of css.matchAll(/url\(\s*['"]?([^'"\s)]+)['"]?\s*\)/g)) checkLink(asset, match[1]);
     }
   }
-  if (!assets.has('.nojekyll')) fail('docs', 'Missing .nojekyll');
+  if (!assets.has('.nojekyll')) fail('public', 'Missing .nojekyll');
   const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
   const feed = await readFile(path.join(root, 'feeds/all.atom.xml'), 'utf8');
   if (!/<author>\s*<name>CODE4BW<\/name>\s*<\/author>/.test(feed)) fail('feeds/all.atom.xml', 'Use the public nickname as feed author');

@@ -8,7 +8,7 @@ const project = fileURLToPath(new URL('../', import.meta.url));
 const temp = path.join(project, 'Temp');
 await mkdir(temp, { recursive: true });
 for (const key of ['TEMP', 'TMP', 'TMPDIR']) process.env[key] = temp;
-const root = path.join(project, 'docs');
+const root = path.join(project, 'public');
 const port = Number(process.env.PORT || 8000);
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
 
@@ -21,7 +21,7 @@ const server = http.createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
     filename = path.resolve(root, '.' + pathname);
-    if (filename !== root && !filename.startsWith(root + path.sep)) throw new Error('Outside docs');
+    if (filename !== root && !filename.startsWith(root + path.sep)) throw new Error('Outside public');
     if ((await stat(filename)).isDirectory()) filename = path.join(filename, 'index.html');
     if (!(await stat(filename)).isFile()) throw new Error('Not a file');
     response.statusCode = 200;
@@ -37,4 +37,4 @@ const server = http.createServer(async (request, response) => {
   stream.pipe(response);
 });
 server.on('error', error => { console.error(error.message); process.exitCode = 1; });
-server.listen(port, '127.0.0.1', () => console.log(`Local: http://127.0.0.1:${port}\nServing docs/ directly. Press Ctrl+C to stop.`));
+server.listen(port, '127.0.0.1', () => console.log(`Local: http://127.0.0.1:${port}\nServing public/ directly. Press Ctrl+C to stop.`));

@@ -209,7 +209,7 @@ export async function buildSite(root = project, { check = false } = {}) {
     if (file.endsWith('.css')) for (const match of data.toString().matchAll(/url\(\s*['"]?([^'"\s)]+)['"]?\s*\)/g)) assetUrl(match[1], file);
   }
   const working = await mkdtemp(path.join(temp, 'blog-build-'));
-  const staged = path.join(working, 'docs');
+  const staged = path.join(working, 'public');
   let preserveRecovery = false;
   try {
     for (const [filename, data] of output) {
@@ -218,12 +218,12 @@ export async function buildSite(root = project, { check = false } = {}) {
       await writeFile(target, data);
     }
     const result = await checkSite(staged);
-    const target = path.join(root, 'docs');
+    const target = path.join(root, 'public');
     if (check) {
       const existing = await files(target);
       const expected = [...output.keys()].sort();
       const actual = existing.map(file => path.relative(target, file).split(path.sep).join('/')).sort();
-      if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error('docs/ file list is stale. Run node scripts/build.mjs');
+      if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error('public/ file list is stale. Run node scripts/build.mjs');
       for (const [file, data] of output) if (!(await readFile(path.join(target, file))).equals(data)) throw new Error(`${file} is stale. Run node scripts/build.mjs`);
     } else {
       const previous = path.join(working, 'previous');
@@ -233,7 +233,7 @@ export async function buildSite(root = project, { check = false } = {}) {
         if (moved) {
           preserveRecovery = true;
           try { await rename(previous, target); preserveRecovery = false; }
-          catch { throw new Error(`Could not restore docs/. Previous output preserved at ${previous}`, { cause: error }); }
+          catch { throw new Error(`Could not restore public/. Previous output preserved at ${previous}`, { cause: error }); }
         }
         throw error;
       }
@@ -249,6 +249,6 @@ if (path.resolve(process.argv[1] || '') === fileURLToPath(import.meta.url)) {
   try {
     if (process.argv.slice(2).some(arg => arg !== '--check')) throw new Error('Usage: node scripts/build.mjs [--check]');
     const result = await buildSite(project, { check: process.argv.includes('--check') });
-    console.log(`PASS: ${result.generated} files from content/; ${result.articles} published articles. ${process.argv.includes('--check') ? 'docs/ is up to date.' : 'Updated docs/.'}`);
+    console.log(`PASS: ${result.generated} files from content/; ${result.articles} published articles. ${process.argv.includes('--check') ? 'public/ is up to date.' : 'Updated public/.'}`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }

@@ -1,6 +1,6 @@
 # CODE4BW · Engineering Logs
 
-`content/`를 원본으로 관리하고, 로컬에서 생성한 `docs/`의 정적 HTML을 GitHub Pages에 배포하는 블로그입니다. GitHub에서는 HTML을 생성하거나 Markdown을 해석하지 않습니다.
+`content/`를 원본으로 관리하고, 로컬에서 생성한 `public/`의 정적 HTML을 GitHub Pages에 배포하는 블로그입니다. GitHub에서는 HTML을 생성하거나 Markdown을 해석하지 않습니다.
 
 ## 구조
 
@@ -21,11 +21,11 @@ scripts/
   check-site.mjs       배포 파일의 링크·메타 정보·개인정보 검사
   serve.mjs            로컬 미리보기
 tests/build.test.mjs   원본 수정·공개 전환·오류 시 보존 동작 검사
-docs/                  생성된 배포 결과; Git에 함께 커밋
+public/                생성된 배포 결과; Git에 함께 커밋
 Temp/                  임시 파일·캐시·로컬 복구 백업; Git에서 제외
 ```
 
-**수정은 `content/`와 `templates/`에서 합니다.** `docs/`를 직접 수정하면 다음 생성 시 덮어씁니다. 글과 이미지의 원본은 `content/`에 있으며, 배포에 필요한 이미지만 `docs/`에 복사합니다. 초안은 사이트에 배포되지 않습니다. 공개 저장소에서는 초안 원본 자체를 열람할 수 있습니다.
+**수정은 `content/`와 `templates/`에서 합니다.** `public/`를 직접 수정하면 다음 생성 시 덮어씁니다. 글과 이미지의 원본은 `content/`에 있으며, 배포에 필요한 이미지만 `public/`에 복사합니다. 초안은 사이트에 배포되지 않습니다. 공개 저장소에서는 초안 원본 자체를 열람할 수 있습니다.
 
 작성자는 `CODE4BW`로 표기합니다. 실명이나 개인 연락처를 추가하지 않으며, 커밋에도 닉네임과 GitHub 비공개 이메일을 사용합니다.
 
@@ -82,13 +82,13 @@ Topics: [systems]
 ## 검사와 배포
 
 ```powershell
-node scripts/build.mjs          # content/ → docs/
-node scripts/build.mjs --check  # 원본과 배포 결과가 일치하는지 검사; docs/를 수정하지 않음
+node scripts/build.mjs          # content/ → public/
+node scripts/build.mjs --check  # 원본과 배포 결과가 일치하는지 검사; public/를 수정하지 않음
 node --test tests/build.test.mjs
 ```
 
-생성 중 오류가 나면 기존 `docs/`를 보존합니다. 성공하면 전체 배포 결과를 교체하므로 삭제하거나 초안으로 바꾼 글의 HTML과 사용하지 않는 이미지가 남지 않습니다. 생성 결과의 내부 링크·목차·작성자·연락처 노출·RSS·사이트맵도 검사합니다.
+생성 중 오류가 나면 기존 `public/`를 보존합니다. 성공하면 전체 배포 결과를 교체하므로 삭제하거나 초안으로 바꾼 글의 HTML과 사용하지 않는 이미지가 남지 않습니다. 생성 결과의 내부 링크·목차·작성자·연락처 노출·RSS·사이트맵도 검사합니다.
 
-`content/`, `templates/` 등 수정한 원본과 생성된 `docs/`를 함께 커밋하고 `main`에 push합니다. GitHub Actions는 **검사 후 `docs/`만 업로드**합니다. 배포 시 패키지 설치나 HTML 생성은 수행하지 않습니다. Pages의 Source는 **GitHub Actions**로 설정합니다.
+`content/`, `templates/` 등 수정한 원본과 생성된 `public/`를 함께 커밋하고 `main`에 push합니다. GitHub Actions는 **검사 후 `public/`만 업로드**합니다. 배포 시 패키지 설치나 HTML 생성은 수행하지 않습니다. Pages의 Source는 **GitHub Actions**로 설정합니다.
 
 상업용 테마와 Pelican 의존성은 사용하지 않습니다. 이전 테마와 개인 식별 정보는 Git 이력에서도 정리했으므로, 이전 이력을 가진 복제본은 새로 clone해 사용합니다.
