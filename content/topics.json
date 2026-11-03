@@ -1,0 +1,7 @@
+[
+  { "id": "systems", "title": "컴퓨터 구조", "label": "COMPUTER SYSTEMS" },
+  { "id": "ai", "title": "인공지능", "label": "AI ENGINEERING" },
+  { "id": "mlops", "title": "모델과 서비스", "label": "MLOPS & API" },
+  { "id": "motion", "title": "모션과 인터랙션", "label": "MOTION & INTERACTION" },
+  { "id": "tools", "title": "개발 도구", "label": "TOOLS & WORKFLOW" }
+]

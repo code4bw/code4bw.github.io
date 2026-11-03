@@ -11,6 +11,8 @@ Slug: project01
 Authors: CODE4BW
 Summary: Virtual Human에 사용되는 가상음성을 제작하는 프로젝트로 다화자, 다국어 지원을 목표로 합니다. 특히 한가지 언어로만 녹음된 목소리도 녹음되지 않은 언어로 목소리를 유지하면서 발화를 하는 것을 목표로 합니다
 Image: /assets/imgs/pr01_voice_model_train_image.png
+Excerpt: 다화자·다국어 음성 모델의 데이터 수집부터 훈련, 평가까지의 개발 기록.
+Topics: [ai, mlops]
 ---
 ### 기간
 - 회사 프로젝트

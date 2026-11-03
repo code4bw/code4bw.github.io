@@ -11,6 +11,8 @@ Slug: cpu_structure_and_function
 Authors: CODE4BW
 Summary: CPU의 구조와 CPU가 명령어를 실행하는 과정을 정리
 Image: /assets/imgs/cpu_die_image.png
+Excerpt: ALU, 제어 장치, 레지스터부터 명령어 사이클과 인터럽트까지.
+Topics: [systems]
 ---
 ![](../assets/imgs/cpu_die_image.png)
 ### CPU의 구조

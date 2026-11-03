@@ -11,6 +11,8 @@ Slug: project04
 Authors: CODE4BW
 Summary: 읽은 책, 글에서 하이라이트 한 내용을 자동으로 추출하는 프로그램을 제작하는 프로젝트로 Vibe Coding을 활용하여 제작함
 Image: /assets/imgs/pr04_final.png
+Excerpt: PDF의 하이라이트를 추출해 Obsidian 노트로 옮기는 도구를 만든 경험.
+Topics: [tools]
 ---
 ### 기간
 - 개인 프로젝트

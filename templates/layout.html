@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}} · CODE4BW</title>
+  <meta name="description" content="{{description}}">
+  <meta name="author" content="CODE4BW">
+  <meta property="og:type" content="{{type}}">
+  <meta property="og:site_name" content="CODE4BW · Engineering Logs">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  {{head}}
+  <link rel="canonical" href="{{canonical}}">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="CODE4BW의 기록" href="feeds/all.atom.xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="CODE4BW 홈"><span class="brand-mark" aria-hidden="true">/</span>code4bw<small>ENGINEERING LOGS</small></a>
+    <nav class="site-nav" aria-label="주 메뉴">{{navigation}}</nav>
+    <div class="header-actions">
+      <a class="github-link" href="https://github.com/code4bw">GitHub ↗</a>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="어두운 화면으로 전환" aria-pressed="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 14A8.5 8.5 0 0 1 10 3.5 8.5 8.5 0 1 0 20.5 14Z"/></svg></button>
+    </div>
+  </div>
+</header>
+{{body}}
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© CODE4BW <span aria-hidden="true">/</span> 배운 것을 연결하고, 경험을 기록합니다.</span>
+    <nav class="footer-links" aria-label="하단 메뉴"><a href="https://github.com/code4bw">GitHub ↗</a><a href="feeds/all.atom.xml">RSS ↗</a><a href="tags.html">태그</a></nav>
+  </div>
+</footer>
+</body>
+</html>

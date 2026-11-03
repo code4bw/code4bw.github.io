@@ -1,10 +1,10 @@
 ---
-Status: published
+Status: draft
 Title: Topics
 Date: 2025-06-19
 Modified: 2025-06-19
 Category: INDEX
-Slug: topics
+Slug: topics-plan
 Authors: CODE4BW
 Summary: 블로그 글을 주제별로 분류한 페이지 
 ---

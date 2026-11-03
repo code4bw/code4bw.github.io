@@ -66,6 +66,7 @@ h1, h2, h3, p { margin-top: 0; }
 .section-heading h2 { font-size: 21px; letter-spacing: -.8px; margin: 0; }
 .section-heading .mono { color: var(--muted); font-size: 11px; }
 .featured { display: grid; grid-template-columns: 1fr 220px; background: var(--surface); border: 1px solid var(--line); margin-bottom: 26px; overflow: hidden; }
+.featured.featured-text { grid-template-columns: 1fr; }
 .featured-copy { padding: 27px; }
 .entry-type { font-size: 10px; font-weight: 650; color: var(--accent); letter-spacing: .6px; }
 .featured h3 { font-size: 22px; letter-spacing: -.8px; margin-block: 14px 9px; }

@@ -1,0 +1,18 @@
+{
+  "name": "code4bw-blog",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "test": "node --test tests/build.test.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "markdown-it": "15.0.3",
+    "yaml": "2.9.1"
+  }
+}

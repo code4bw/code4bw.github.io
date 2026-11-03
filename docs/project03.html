@@ -12,11 +12,7 @@
   <meta property="og:title" content="단일 카메라 기반 모션 캡처 구현">
   <meta property="og:description" content="캐릭터 기반 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트에서 캐릭터의 동작 구현을 위한 단일 카메라 기반 모션 캡처기능 구현 및 유니티와 연동">
   <meta property="og:url" content="https://code4bw.github.io/project03.html">
-  <meta property="og:image" content="https://code4bw.github.io/assets/imgs/pr03_mediapipe_functions.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="article:published_time" content="2024-10-21">
-  <meta property="article:modified_time" content="2024-10-21">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "단일 카메라 기반 모션 캡처 구현", "description": "캐릭터 기반 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트에서 캐릭터의 동작 구현을 위한 단일 카메라 기반 모션 캡처기능 구현 및 유니티와 연동", "datePublished": "2024-10-21", "dateModified": "2024-10-21", "inLanguage": "ko", "author": {"@type": "Person", "name": "CODE4BW", "url": "https://code4bw.github.io/about.html"}, "mainEntityOfPage": "https://code4bw.github.io/project03.html", "image": "https://code4bw.github.io/assets/imgs/pr03_mediapipe_functions.png"}</script>
+  <meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://code4bw.github.io/assets/imgs/pr03_mediapipe_functions.png"><meta property="article:published_time" content="2024-10-21T10:00:00+09:00"><meta property="article:modified_time" content="2024-10-21T22:00:00+09:00"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"단일 카메라 기반 모션 캡처 구현","description":"캐릭터 기반 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트에서 캐릭터의 동작 구현을 위한 단일 카메라 기반 모션 캡처기능 구현 및 유니티와 연동","datePublished":"2024-10-21T10:00:00+09:00","dateModified":"2024-10-21T22:00:00+09:00","inLanguage":"ko","author":{"@type":"Person","name":"CODE4BW","url":"https://code4bw.github.io/about.html"},"mainEntityOfPage":"https://code4bw.github.io/project03.html","image":"https://code4bw.github.io/assets/imgs/pr03_mediapipe_functions.png"}</script>
   <link rel="canonical" href="https://code4bw.github.io/project03.html">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/atom+xml" title="CODE4BW의 기록" href="feeds/all.atom.xml">
@@ -43,20 +39,21 @@
       <h1>단일 카메라 기반 모션 캡처 구현</h1>
       <p class="article-summary">캐릭터 기반 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트에서 캐릭터의 동작 구현을 위한 단일 카메라 기반 모션 캡처기능 구현 및 유니티와 연동</p>
       <div class="entry-meta"><span>CODE4BW</span><time datetime="2024-10-21">2024.10.21</time><span>2분 읽기</span><span>수정 2024.10.21</span></div>
-      <div class="tag-list"><a href="topics.html#motion">#Mediapipe</a><a href="topics.html#motion">#Unity</a><a href="topics.html#motion">#MotionCapture</a></div>
+      <div class="tag-list"><a href="tags.html#tag-4d6564696170697065">#Mediapipe</a><a href="tags.html#tag-556e697479">#Unity</a><a href="tags.html#tag-4d6f74696f6e43617074757265">#MotionCapture</a></div>
     </header>
-    <div class="article-body">
-<h2 id="section-1">기간</h2>
+    <div class="article-body"><h2 id="section-1">기간</h2>
 <ul>
 <li>회사 프로젝트</li>
 <li>2023.03 ~ 2023.09 (6개월)</li>
 </ul>
 <h2 id="section-2">목표</h2>
 <ul>
-<li>VTuber 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트 <ul>
-<li>VTuber의 동작 구현을 위한 단일 카메라 기반의 모션 캡처 기능 구현 <ul>
-<li>단일 카메라로 동작 </li>
-<li>카메라에서 추정한 동작을 보정 및 연산하여 캐릭터에 움직임 반영 </li>
+<li>VTuber 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트
+<ul>
+<li>VTuber의 동작 구현을 위한 단일 카메라 기반의 모션 캡처 기능 구현
+<ul>
+<li>단일 카메라로 동작</li>
+<li>카메라에서 추정한 동작을 보정 및 연산하여 캐릭터에 움직임 반영</li>
 <li>모션이 추정 오류에 의해 급격하게 튀지 않도록 안정화 코드 구현</li>
 </ul>
 </li>
@@ -73,9 +70,11 @@
 <h3 id="section-5">유니티와 Mediapipe 연동</h3>
 <ul>
 <li>모션 캡쳐와 관련된 AI 모델중 가볍고 성능이 좋은 mediapipe를 활용</li>
-<li>오픈소스 플러그인을 이용해서 mediapipe와 unity를 연동<ul>
-<li><a href="https://github.com/homuler/MediaPipeUnityPlugin">https://github.com/homuler/MediaPipeUnityPlugin</a><ul>
-<li><img alt="단일 카메라 기반 모션 캡처 구현 관련 이미지" decoding="async" loading="lazy" src="assets/imgs/pr03_mediapipe_functions.png"/></li>
+<li>오픈소스 플러그인을 이용해서 mediapipe와 unity를 연동
+<ul>
+<li><a href="https://github.com/homuler/MediaPipeUnityPlugin">https://github.com/homuler/MediaPipeUnityPlugin</a>
+<ul>
+<li><img src="assets/imgs/pr03_mediapipe_functions.png" alt="단일 카메라 기반 모션 캡처 구현 관련 이미지" loading="lazy" decoding="async"></li>
 </ul>
 </li>
 <li>최적화를 위해 불필요한 기능을 제외하고 다시 빌드해서 연동함</li>
@@ -86,24 +85,28 @@
 <h3 id="section-6">모션 연산 구현</h3>
 <ul>
 <li>mediapipe에서 오는 값은 화면 프레임의 위치 x, y값과 depth에 대한 추정 z값임</li>
-<li>이 값을 캐릭터의 움직임으로 바꾸기 위해 각 관절의 각도로 변환하는 계산을 구현<ul>
+<li>이 값을 캐릭터의 움직임으로 바꾸기 위해 각 관절의 각도로 변환하는 계산을 구현
+<ul>
 <li>사람의 몸에서 중심이 되는 방향은 가슴 및 배가 향하는 방향이므로 이를 기준으로 벡터 연산을 하여 각 관절의 방향을 구함</li>
-<li><img alt="단일 카메라 기반 모션 캡처 구현 관련 이미지" decoding="async" loading="lazy" src="assets/imgs/pr03_mocap_sample.png"/></li>
+<li><img src="assets/imgs/pr03_mocap_sample.png" alt="단일 카메라 기반 모션 캡처 구현 관련 이미지" loading="lazy" decoding="async"></li>
 </ul>
 </li>
 </ul>
 <h3 id="section-7">모션 안정화</h3>
 <ul>
-<li>mediapipe에서 출력하는 x, y는 이미지 내의 위치고 z는 모델이 추정하는 값임 <ul>
-<li>작은 오차에도 각도는 크게 변할 수 있음 </li>
-<li>z가 완전히 잘못된 값인 경우가 있음 <ul>
+<li>mediapipe에서 출력하는 x, y는 이미지 내의 위치고 z는 모델이 추정하는 값임
+<ul>
+<li>작은 오차에도 각도는 크게 변할 수 있음</li>
+<li>z가 완전히 잘못된 값인 경우가 있음
+<ul>
 <li>갑작스럽게 큰 변화는 값을 작게하여 적용하도록 구현</li>
 <li>실제 관절이 가동 가능한 각도인지를 평가하여 변화를 적용함</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>카메라에서 벗어나거나 모션캡처에 실패한 경우<ul>
+<li>카메라에서 벗어나거나 모션캡처에 실패한 경우
+<ul>
 <li>기본 애니메이션 적용</li>
 </ul>
 </li>
@@ -115,23 +118,26 @@
 </ul>
 <h2 id="section-9">정리</h2>
 <ul>
-<li>유니티의 동작 방식을 이해하고 유니티로 소프트웨어 개발 방법을 학습<ul>
-<li>C# 및 코루틴 활용 </li>
-<li>애니메이션과 상태머신 사용 </li>
-<li>3D 게임 개발 관련 기본 지식 습득 </li>
+<li>유니티의 동작 방식을 이해하고 유니티로 소프트웨어 개발 방법을 학습
+<ul>
+<li>C# 및 코루틴 활용</li>
+<li>애니메이션과 상태머신 사용</li>
+<li>3D 게임 개발 관련 기본 지식 습득</li>
 </ul>
 </li>
-<li>다른 개발 및 디자인 인원과 협업<ul>
-<li>개발 일정을 조율하고 그에 맞춰 개발 작업을 수행 </li>
+<li>다른 개발 및 디자인 인원과 협업
+<ul>
+<li>개발 일정을 조율하고 그에 맞춰 개발 작업을 수행</li>
 <li>개발 작업물을 리뷰하고 수정 사항등을 반영하며 개발 협업 과정을 습득</li>
 </ul>
 </li>
 </ul>
-    </div>
+</div>
     <footer class="article-end"><a href="portfolio.html">← 프로젝트 목록으로</a></footer>
   </article>
   <aside class="article-aside" aria-label="글 목차"><div class="toc"><p>이 글의 순서</p><nav aria-label="목차"><a href="#section-1">기간</a><a href="#section-2">목표</a><a href="#section-3">성과</a><a href="#section-4">과정</a><a href="#section-9">정리</a></nav></div></aside>
 </main>
+
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <span>© CODE4BW <span aria-hidden="true">/</span> 배운 것을 연결하고, 경험을 기록합니다.</span>

@@ -1,0 +1,15 @@
+<main id="main" class="wrap article-layout">
+  <article>
+    <nav class="breadcrumbs" aria-label="현재 위치"><a href="index.html">홈</a><span aria-hidden="true">/</span><a href="{{parent_url}}">{{parent_name}}</a></nav>
+    <header class="article-header">
+      <div class="eyebrow">{{eyebrow}}</div>
+      <h1>{{title}}</h1>
+      <p class="article-summary">{{description}}</p>
+      <div class="entry-meta"><span>CODE4BW</span><time datetime="{{date}}">{{display_date}}</time><span>{{minutes}}분 읽기</span><span>수정 {{modified}}</span></div>
+      <div class="tag-list">{{tags}}</div>
+    </header>
+    <div class="article-body">{{body}}</div>
+    <footer class="article-end"><a href="{{parent_url}}">← {{parent_name}} 목록으로</a></footer>
+  </article>
+  <aside class="article-aside" aria-label="글 목차"><div class="toc"><p>이 글의 순서</p><nav aria-label="목차">{{toc}}</nav></div></aside>
+</main>

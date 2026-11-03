@@ -1,5 +1,5 @@
 ---
-Status: published
+Status: draft
 Title: CPU의 성능 높이기
 Date: 2025-06-20
 Modified: 2025-06-20

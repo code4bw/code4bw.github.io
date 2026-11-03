@@ -12,6 +12,8 @@ Slug: project02
 Authors: CODE4BW
 Summary: 음성 생성 모델을 외부에서 사용할 수 있도록 API를 개발 및 관리 할 수 있도록 관리 페이지를 구현하는 작업
 Image: /assets/imgs/pr02_ui_sample.png
+Excerpt: TorchServe와 FastAPI를 연결해 음성 생성 모델을 서비스로 제공한 과정.
+Topics: [mlops]
 ---
 ### 기간
 - 회사 프로젝트

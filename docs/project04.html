@@ -12,11 +12,7 @@
   <meta property="og:title" content="Vibe Coding으로 PDF 하이라이트 추출기 구현">
   <meta property="og:description" content="읽은 책, 글에서 하이라이트 한 내용을 자동으로 추출하는 프로그램을 제작하는 프로젝트로 Vibe Coding을 활용하여 제작함">
   <meta property="og:url" content="https://code4bw.github.io/project04.html">
-  <meta property="og:image" content="https://code4bw.github.io/assets/imgs/pr04_final.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="article:published_time" content="2025-04-28">
-  <meta property="article:modified_time" content="2025-06-16">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Vibe Coding으로 PDF 하이라이트 추출기 구현", "description": "읽은 책, 글에서 하이라이트 한 내용을 자동으로 추출하는 프로그램을 제작하는 프로젝트로 Vibe Coding을 활용하여 제작함", "datePublished": "2025-04-28", "dateModified": "2025-06-16", "inLanguage": "ko", "author": {"@type": "Person", "name": "CODE4BW", "url": "https://code4bw.github.io/about.html"}, "mainEntityOfPage": "https://code4bw.github.io/project04.html", "image": "https://code4bw.github.io/assets/imgs/pr04_final.png"}</script>
+  <meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://code4bw.github.io/assets/imgs/pr04_final.png"><meta property="article:published_time" content="2025-04-28T00:00:00+09:00"><meta property="article:modified_time" content="2025-06-16T00:00:00+09:00"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vibe Coding으로 PDF 하이라이트 추출기 구현","description":"읽은 책, 글에서 하이라이트 한 내용을 자동으로 추출하는 프로그램을 제작하는 프로젝트로 Vibe Coding을 활용하여 제작함","datePublished":"2025-04-28T00:00:00+09:00","dateModified":"2025-06-16T00:00:00+09:00","inLanguage":"ko","author":{"@type":"Person","name":"CODE4BW","url":"https://code4bw.github.io/about.html"},"mainEntityOfPage":"https://code4bw.github.io/project04.html","image":"https://code4bw.github.io/assets/imgs/pr04_final.png"}</script>
   <link rel="canonical" href="https://code4bw.github.io/project04.html">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/atom+xml" title="CODE4BW의 기록" href="feeds/all.atom.xml">
@@ -43,19 +39,20 @@
       <h1>Vibe Coding으로 PDF 하이라이트 추출기 구현</h1>
       <p class="article-summary">읽은 책, 글에서 하이라이트 한 내용을 자동으로 추출하는 프로그램을 제작하는 프로젝트로 Vibe Coding을 활용하여 제작함</p>
       <div class="entry-meta"><span>CODE4BW</span><time datetime="2025-04-28">2025.04.28</time><span>3분 읽기</span><span>수정 2025.06.16</span></div>
-      <div class="tag-list"><a href="topics.html#tools">#VibeCoding</a><a href="topics.html#tools">#Prompting</a></div>
+      <div class="tag-list"><a href="tags.html#tag-56696265436f64696e67">#VibeCoding</a><a href="tags.html#tag-50726f6d7074696e67">#Prompting</a></div>
     </header>
-    <div class="article-body">
-<h2 id="section-1">기간</h2>
+    <div class="article-body"><h2 id="section-1">기간</h2>
 <ul>
 <li>개인 프로젝트</li>
 <li>2025.04 ~ 2025.04</li>
 </ul>
 <h2 id="section-2">목표</h2>
 <ul>
-<li>개인적으로 구매한 대부분의 도서 파일을 PDF로 보관하고 PDF를 통해서 책을 읽음<ul>
+<li>개인적으로 구매한 대부분의 도서 파일을 PDF로 보관하고 PDF를 통해서 책을 읽음
+<ul>
 <li>PDF에 하이라이트를 모아서 메모로 정리하는데 직접 옮기는 것은 시간이 많이 걸림</li>
-<li>Readwise 서비스 처럼 읽은 책의 highlight를 노트로 바로 내보내는 프로그램 구현<ul>
+<li>Readwise 서비스 처럼 읽은 책의 highlight를 노트로 바로 내보내는 프로그램 구현
+<ul>
 <li>PDF 파일에서 하이라이트를 추출하는 프로그램 제작</li>
 <li>추출한 하이라이트를 <code>.md</code> 형식으로 저장하여 옵시디언에서 활용</li>
 <li>하이라이트가 있는 페이지를 바로 볼 수 있도록 pdf 링크를 생성</li>
@@ -67,7 +64,8 @@
 <h2 id="section-3">성과</h2>
 <ul>
 <li>PDF에서 하이라이트를 추출해서 <code>.md</code>로 저장하는 프로그램 구현</li>
-<li>Vibe Coding을 이용해서 제작함<ul>
+<li>Vibe Coding을 이용해서 제작함
+<ul>
 <li>Vibe Coding으로 개발하는 방법을 습득</li>
 </ul>
 </li>
@@ -84,63 +82,72 @@
 <h3 id="section-6">오류 고치기</h3>
 <ul>
 <li>생성된 코드를 실행 후 PDF 추출을 시도해보니 아래의 오류가 발생함</li>
-<li><img alt="Vibe Coding으로 PDF 하이라이트 추출기 구현 관련 이미지" decoding="async" loading="lazy" src="assets/imgs/pr04_error.png"/></li>
+<li><img src="assets/imgs/pr04_error.png" alt="Vibe Coding으로 PDF 하이라이트 추출기 구현 관련 이미지" loading="lazy" decoding="async"></li>
 <li>quad_points 속성이 없는 pdf도 있어서 발생한 문제. 해당 케이스를 제외하도록 소스에 추가하면 간단하지만 이 오류 수정을 AI에 맡겨봄</li>
 </ul>
 <pre><code>'Annot' object has no attribute 'quad_points'라는 오류가 발생하는데 이 문제를 해결해줘
 </code></pre>
 <ul>
-<li>오류가 수정되어 정상적으로 추출됨을 확인<ul>
-<li><img alt="Vibe Coding으로 PDF 하이라이트 추출기 구현 관련 이미지" decoding="async" loading="lazy" src="assets/imgs/pr04_firstlook.png"/></li>
+<li>오류가 수정되어 정상적으로 추출됨을 확인
+<ul>
+<li><img src="assets/imgs/pr04_firstlook.png" alt="Vibe Coding으로 PDF 하이라이트 추출기 구현 관련 이미지" loading="lazy" decoding="async"></li>
 </ul>
 </li>
 </ul>
 <h3 id="section-7">수정하기</h3>
 <ul>
-<li>출력되는 형식은 직접 수정하기로 결정<ul>
+<li>출력되는 형식은 직접 수정하기로 결정
+<ul>
 <li>프롬프트로 코드 수정을 요청하면 전체를 재작성하기 때문에 시간이 많이 소요됨</li>
 <li>원하는 형태로 만들때까지 여러번 반복이 필요한데 직접 수정하는 것보다 더 긴 시간이 소요될 수 있음</li>
 </ul>
 </li>
-<li>최종적으로 아래와 같이 수정<ul>
+<li>최종적으로 아래와 같이 수정
+<ul>
 <li>폰트를 '나눔고딕'으로 변경</li>
 <li>원본 하이라이트로 바로 갈 수 있도록 PDF 링크를 추가</li>
 <li>내용을 bullet list로 표시하도록 변경</li>
 <li>하이라이트에 추가한 메모를 보이도록 수정</li>
-<li><img alt="Vibe Coding으로 PDF 하이라이트 추출기 구현 관련 이미지" decoding="async" loading="lazy" src="assets/imgs/pr04_final.png"/></li>
+<li><img src="assets/imgs/pr04_final.png" alt="Vibe Coding으로 PDF 하이라이트 추출기 구현 관련 이미지" loading="lazy" decoding="async"></li>
 </ul>
 </li>
 </ul>
 <h2 id="section-8">정리</h2>
 <ul>
 <li>이 프로젝트를 진행하는데 프롬프팅 30분 + 직접 수정 2시간 정도가 소요</li>
-<li>큰 프로젝트에서는 사용에 많은 주의가 필요해 보임<ul>
+<li>큰 프로젝트에서는 사용에 많은 주의가 필요해 보임
+<ul>
 <li>큰 프로젝트에서는 context length 제한때문에 전체 소스를 넣기 어려움</li>
 <li>코드를 다시 작성하기 때문에 다른 부분들과 연결된 코드는 문제가 생길수 있음</li>
 </ul>
 </li>
-<li>세부적인 디테일을 구현하기 위해 "프롬프트 수정 &gt; 결과 확인"을 반복해야함<ul>
+<li>세부적인 디테일을 구현하기 위해 &quot;프롬프트 수정 &gt; 결과 확인&quot;을 반복해야함
+<ul>
 <li>프롬프트 수정시 앞서 잘 되거나 마음에 들었던 구현이 안나올수 있음</li>
-<li>프롬프트를 수정해서 결과를 보는 것 보다 직접 수정하는 것이 훨씬 빠를수 있음<ul>
+<li>프롬프트를 수정해서 결과를 보는 것 보다 직접 수정하는 것이 훨씬 빠를수 있음
+<ul>
 <li>프롬프트를 수정할지 직접 수정할지 판단이 필요함</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>기능을 추가 및 변경할때 이전 프롬프트도 계속 유지해야함<ul>
+<li>기능을 추가 및 변경할때 이전 프롬프트도 계속 유지해야함
+<ul>
 <li>소스와 prompt의 버전관리가 필요할 수도 있을것 같음</li>
 </ul>
 </li>
-<li>현재는 이미지/영상 분야와 비슷한 방식으로 활용되는 것 같다<ul>
+<li>현재는 이미지/영상 분야와 비슷한 방식으로 활용되는 것 같다
+<ul>
 <li>프롬프트 돌려서 괜찮아 보이는 결과물을 뽑은다음 세부 디테일을 수정해서 활용</li>
 </ul>
 </li>
 </ul>
-    </div>
+</div>
     <footer class="article-end"><a href="portfolio.html">← 프로젝트 목록으로</a></footer>
   </article>
   <aside class="article-aside" aria-label="글 목차"><div class="toc"><p>이 글의 순서</p><nav aria-label="목차"><a href="#section-1">기간</a><a href="#section-2">목표</a><a href="#section-3">성과</a><a href="#section-4">과정</a><a href="#section-8">정리</a></nav></div></aside>
 </main>
+
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <span>© CODE4BW <span aria-hidden="true">/</span> 배운 것을 연결하고, 경험을 기록합니다.</span>

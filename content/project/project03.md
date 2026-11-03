@@ -12,6 +12,8 @@ Slug: project03
 Authors: CODE4BW
 Summary: 캐릭터 기반 라이브 스트리밍과 메타버스 통합 솔루션 개발 프로젝트에서 캐릭터의 동작 구현을 위한 단일 카메라 기반 모션 캡처기능 구현 및 유니티와 연동
 Image: /assets/imgs/pr03_mediapipe_functions.png
+Excerpt: Mediapipe의 관절 추정을 Unity 캐릭터의 자연스러운 움직임으로 연결하기.
+Topics: [motion]
 ---
 ### 기간
 - 회사 프로젝트
